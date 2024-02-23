@@ -127,7 +127,7 @@ let
     # derivation and should instead be added / propagated where appropriate, but
     # until someone decides to investigate the actual dependencies, it remains
     # here instead of in overrides.
-    buildInputs = runtimeDependencies ++ lib.optionals stdenv.hostPlatform.isDarwin [ pkgs.libiconv ];
+    # buildInputs = runtimeDependencies ++ lib.optionals stdenv.hostPlatform.isDarwin [ pkgs.libiconv ];
     propagatedBuildInputs = lib.unique (concatMap (drv: drv.propagatedBuildInputs) runtimeDependencies);
     nativeBuildInputs = [ rustToolchain ] ++ buildtimeDependencies;
 
